@@ -33,21 +33,42 @@ const sumDigits = num => {
 
 console.log(sumDigits(233421));
 
+const calculateSide = (sideA, sideB) => {
+  return Math.sqrt(Math.pow(sideA, 2) + Math.pow(sideB, 2));
+};
 
-const calculateSide = (sideA, sideB) =>{
-    return Math.sqrt(Math.pow(sideA, 2) + Math.pow(sideB, 2));
+console.log(calculateSide(8, 6));
+
+const sumArray = array => {
+  let theSum = 0;
+
+  for (let i = 0; i < array.length; i++) {
+    theSum += array[i];
   }
+  return theSum;
+};
 
-console.log(calculateSide(8,6));
+console.log(sumArray([1, 2, 3, 4, 5, 6]));
 
-const sumArray = (array) =>{
-    let theSum = 0;
-
-    for (let i = 0; i < array.length; i++) {
-        
-        theSum += array[i];
+const checkPrime = num => {
+  /*if ((num = 1)) {
+    return false;
+  }*/
+  for (let i = 2; i <= Math.sqrt(num); i++) {
+    //console.log("here");
+    if ((num / i) % 1 === 0) {
+      return true;
     }
-    return theSum;
-}
+  }
+  return false;
+};
 
-console.log(sumArray([1,2,3,4,5,6]));
+const printPrimes = num => {
+  for (let i = 2; i <= num; i++) {
+    //console.log(i);
+    if (!checkPrime(i)) {
+      console.log(i);
+    }
+  }
+};
+printPrimes(97);
