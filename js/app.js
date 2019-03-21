@@ -7,3 +7,17 @@
     // allows you to write it once and use it multiple times
 }
 
+const checkPalindrome = (string) =>{
+    let reversed = "";    
+    for (var i = string.length - 1; i >= 0; i--){        
+        reversed += string[i];
+    }    
+    if(string.toUpperCase()==reversed.toUpperCase()){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+console.log(checkPalindrome("Otto"));
+console.log(checkPalindrome("RADGGRTFG"));
