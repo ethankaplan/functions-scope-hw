@@ -21,3 +21,16 @@ const checkPalindrome = (string) =>{
 }
 console.log(checkPalindrome("Otto"));
 console.log(checkPalindrome("RADGGRTFG"));
+
+const sumDigits = (num) =>{
+    let string = num.toString().split("");
+    console.log(string);
+    let theSum = 0;
+    for(let i = 0; i<string.length;i++){
+        theSum+=parseInt(string[i],10);
+    }
+    console.log(theSum);
+}
+    
+
+sumDigits(233421);
