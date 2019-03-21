@@ -72,3 +72,23 @@ const printPrimes = num => {
   }
 };
 printPrimes(97);
+
+const insertDash = (num) =>{
+    let digits = (""+num).split("");
+    let len = digits.length;
+    let toOut = "";
+    toOut+=digits[0].toString();
+    for(let i = 1;i<len;i++){
+        if(((digits[i]%2)==1)&&((digits[i-1])%2)==1){
+            toOut+="-"+digits[i];
+        }
+        else{
+            toOut+=digits[i];
+        }
+
+    }
+    return toOut;
+}
+
+console.log(insertDash(454793));
+
