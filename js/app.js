@@ -95,6 +95,8 @@ console.log(insertDash(454793));
 const checkPalindrome2 = string => {
     //notes : https://stackoverflow.com/questions/5964373/is-there-a-difference-between-s-g-and-s-g 
     string = string.replace(/\s+/g, '');
+    //notes : https://stackoverflow.com/questions/4374822/remove-all-special-characters-with-regexp
+    string = string.replace(/[^\w\s]/gi, '');
     let reversed = "";
     for (var i = string.length - 1; i >= 0; i--) {
       reversed += string[i];
@@ -105,5 +107,22 @@ const checkPalindrome2 = string => {
       return false;
     }
   };
-  console.log(checkPalindrome2("Sit on a potato pan Otis"));
-  console.log(checkPalindrome2("Bird rib"));
+
+  const checkPalindrome3 = string => {
+    //notes : https://stackoverflow.com/questions/4374822/remove-all-special-characters-with-regexp
+    string = string.replace(/[^\w\s]/gi, '');
+    let forward = string.toUpperCase().split(" ");
+    let reversed = string.toUpperCase().split(" ").reverse();
+    /*console.log(forward);
+    console.log(reversed);*/
+    /*for (var i = string.length - 1; i >= 0; i--) {
+      reversed += string[i];
+    }*/
+    if (forward.toString() == reversed.toString()) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+  console.log(checkPalindrome2("Sit on@@ a potato @@pan Otis"));
+  console.log(checkPalindrome3("\"Son, I am able,\" she said. \"Though you scare me, watch!\" said I, \"Beloved,\" I said, \"watch me scare you!\" Though, said she: \"able am I, son."));
