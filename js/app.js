@@ -92,3 +92,18 @@ const insertDash = (num) =>{
 
 console.log(insertDash(454793));
 
+const checkPalindrome2 = string => {
+    //notes : https://stackoverflow.com/questions/5964373/is-there-a-difference-between-s-g-and-s-g 
+    string = string.replace(/\s+/g, '');
+    let reversed = "";
+    for (var i = string.length - 1; i >= 0; i--) {
+      reversed += string[i];
+    }
+    if (string.toUpperCase() == reversed.toUpperCase()) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+  console.log(checkPalindrome2("Sit on a potato pan Otis"));
+  console.log(checkPalindrome2("Bird rib"));
